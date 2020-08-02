@@ -50,7 +50,9 @@ class Artwork extends Resource
             TextArea::make('Description'),
             Text::make('Media')->hideFromIndex(),
             Image::make('Image'),
-            Boolean::make('Publish on Social', 'publish_social'),
+            Boolean::make('Push to Social', 'publish_social'),
+            Boolean::make('Instagram', 'published_instagram'),
+            Boolean::make('Twitter', 'published_twitter'),
             TextArea::make('Social Tags'),
             DateTime::make('Publish On')->sortable()
         ];
