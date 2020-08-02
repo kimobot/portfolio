@@ -12,7 +12,13 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-          
+              @foreach($artworks as $artwork)
+                  <div class="">
+                    {{ $artwork->title }}
+                    {{ $artwork->description }}
+                    <img src="{{ asset('storage/' . $artwork->image) }}" alt="">
+                  </div>
+              @endforeach
         </div>
     </body>
 </html>
