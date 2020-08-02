@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\NovaServiceProvider::class,
+        'Thujohn\Twitter\TwitterServiceProvider',
 
         /*
          * Application Service Providers...
@@ -224,6 +225,7 @@ return [
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
+        'Twitter' => 'Thujohn\Twitter\Facades\Twitter',
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
