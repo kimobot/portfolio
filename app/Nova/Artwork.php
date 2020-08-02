@@ -25,7 +25,7 @@ class Artwork extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -33,7 +33,7 @@ class Artwork extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
 
     /**
@@ -48,11 +48,11 @@ class Artwork extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Title')->sortable(),
             TextArea::make('Description'),
-            Text::make('Media')->sortable(),
+            Text::make('Media')->hideFromIndex(),
             Image::make('Image'),
             Boolean::make('Publish on Social', 'publish_social'),
             TextArea::make('Social Tags'),
-            DateTime::make('Publish On')
+            DateTime::make('Publish On')->sortable()
         ];
     }
 
