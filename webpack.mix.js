@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,23 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/js');
+
+mix.sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.config.js')],
+    });
+
+// https://github.com/JeffreyWay/laravel-mix/issues/2235
+Mix.listen('configReady', webpackConfig => {
+    webpackConfig.module.rules.forEach(rule => {
+        if (Array.isArray(rule.use)) {
+            rule.use.forEach(ruleUse => {
+                if (ruleUse.loader === 'resolve-url-loader') {
+                    ruleUse.options.engine = 'postcss';
+                }
+            });
+        }
+    });
+});

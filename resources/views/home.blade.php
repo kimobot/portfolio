@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Home</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
+    <title>Home</title>
 
-        <!-- Styles -->
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-              @foreach($artworks as $artwork)
-                  <div class="">
-                    {{ $artwork->title }}
-                    {{ $artwork->description }}
-                    <img src="{{ asset('storage/' . $artwork->image) }}" alt="">
-                  </div>
-              @endforeach
+    <!-- Fonts -->
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+</head>
+
+<body>
+    <div class="w-full bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 sm:py-8 lg:px-16">
+            @foreach($artworks as $artwork)
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{{ asset('storage/' . $artwork->image) }}" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ $artwork->title }}</div>
+                    <p class="text-gray-700 text-base">
+                        {{ $artwork->description }}
+                    </p>
+                </div>
+                {{-- <div class="px-6 py-4">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
+                </div> --}}
+            </div>
+            @endforeach
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

@@ -50,6 +50,7 @@ class Artwork extends Resource
             TextArea::make('Description'),
             Text::make('Media')->hideFromIndex(),
             Image::make('Image'),
+            Text::make('Alt Text')->hideFromIndex(),
             Boolean::make('Push to Social', 'publish_social'),
             Boolean::make('Instagram', 'published_instagram'),
             Boolean::make('Twitter', 'published_twitter'),
