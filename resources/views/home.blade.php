@@ -16,5 +16,5 @@
 <body>
     @include('partials.art')
 </body>
-
+<script async src="{{ asset(mix('js/app.js')) }}"></script>
 </html>
