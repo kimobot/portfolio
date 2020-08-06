@@ -18,6 +18,7 @@ class CreateArtworksTable extends Migration
             $table->string('title', 255);
             $table->mediumText('description');
             $table->string('media', 255);
+            $table->string('image', 255);
             $table->boolean('publish_social');
             $table->string('social_tags', 255);
             $table->dateTime('publish_on', 0);

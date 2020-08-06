@@ -25,3 +25,6 @@ Homestead.json
 # Laravel Nova
 /nova
 auth.json
+
+# IDEA
+.idea

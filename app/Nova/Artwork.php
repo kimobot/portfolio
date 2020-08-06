@@ -9,7 +9,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\TextArea;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
 
 class Artwork extends Resource
 {
@@ -50,6 +50,7 @@ class Artwork extends Resource
             TextArea::make('Description'),
             Text::make('Media')->hideFromIndex(),
             Image::make('Image'),
+            AdvancedImage::make('Thumbnail')->croppable(16/9),
             Text::make('Alt Text')->hideFromIndex(),
             Boolean::make('Push to Social', 'publish_social'),
             Boolean::make('Instagram', 'published_instagram'),

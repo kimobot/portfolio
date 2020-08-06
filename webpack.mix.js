@@ -32,3 +32,5 @@ Mix.listen('configReady', webpackConfig => {
         }
     });
 });
+
+mix.browserSync('portfolio.test');
