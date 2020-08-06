@@ -10,9 +10,12 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\TextArea;
 use Ctessier\NovaAdvancedImageField\AdvancedImage;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 class Artwork extends Resource
 {
+    use HasSortableRows;
+
     /**
      * The model the resource corresponds to.
      *
