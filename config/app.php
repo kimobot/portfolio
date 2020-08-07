@@ -166,7 +166,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\NovaServiceProvider::class,
-        'Thujohn\Twitter\TwitterServiceProvider',
+        Thujohn\Twitter\TwitterServiceProvider::class,
 
         /*
          * Application Service Providers...
