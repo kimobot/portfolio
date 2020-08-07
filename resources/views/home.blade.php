@@ -15,6 +15,7 @@
 
 <body>
     @include('partials.art')
+    @include('partials.nova-page', ['slug' => 'about-me'])
 </body>
 <script async src="{{ asset(mix('js/app.js')) }}"></script>
 </html>

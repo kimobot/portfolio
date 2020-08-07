@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b09a06faf7dba6b0923e1aaccd054dc5",
+    "content-hash": "2dbb10e400b775a70408e0322874ff07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2173,6 +2173,124 @@
                 "serialize"
             ],
             "time": "2020-06-17T14:59:55+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-locale-field",
+            "version": "2.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-locale-field.git",
+                "reference": "c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-locale-field/zipball/c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7",
+                "reference": "c1a1b2f2d1a423ff7aad94307ee4dfb8548893e7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^2.0.11 || ^3.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaLocaleField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaLocaleField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "field",
+                "laravel",
+                "nova",
+                "optimistdigital"
+            ],
+            "time": "2020-04-24T08:45:16+00:00"
+        },
+        {
+            "name": "optimistdigital/nova-page-manager",
+            "version": "3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/optimistdigital/nova-page-manager.git",
+                "reference": "9c1565ce71eed72b06ffd095d40fde52f12b2440"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/optimistdigital/nova-page-manager/zipball/9c1565ce71eed72b06ffd095d40fde52f12b2440",
+                "reference": "9c1565ce71eed72b06ffd095d40fde52f12b2440",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9",
+                "laravel/nova": "^2.9 || ^3.0",
+                "optimistdigital/nova-locale-field": "^2.0.1",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OptimistDigital\\NovaPageManager\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OptimistDigital\\NovaPageManager\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tarvo Reinpalu",
+                    "email": "tarvoreinpalu@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Optimist Digital",
+                    "email": "info@optimistdigital.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Page(s) and region(s) manager for Laravel Nova.",
+            "keywords": [
+                "laravel",
+                "manager",
+                "nova",
+                "optimistdigital",
+                "page"
+            ],
+            "time": "2020-04-07T13:46:35+00:00"
         },
         {
             "name": "optimistdigital/nova-sortable",
