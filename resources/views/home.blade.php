@@ -11,11 +11,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset(mix('js/app.js')) }}" defer></script>
 </head>
 
 <body>
     @include('partials.art')
     @include('partials.nova-page', ['slug' => 'about-me'])
 </body>
-<script async src="{{ asset(mix('js/app.js')) }}"></script>
 </html>

@@ -1,4 +1,4 @@
-<div class="w-full bg-gray-100" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: ''}">
+<div class="w-full bg-gray-200" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: ''}">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-5 px-4 sm:px-6 lg:px-8 sm:py-8 lg:px-16">
         @foreach($artworks as $artwork)
         <div @click.prevent="open = true, modalSrc='{{ asset('storage/' . $artwork->image) }}', modalTitle='{{ $artwork->title }}', modalDesc='{{ $artwork->description }}'" class="rounded overflow-hidden shadow-lg h-56">
