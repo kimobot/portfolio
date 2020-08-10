@@ -15,7 +15,8 @@
 </head>
 
 <body>
+    @include('partials.nav')
     @include('partials.art')
-    @include('partials.nova-page', ['slug' => 'about-me'])
+    @include('partials.nova-page', ['slug' => 'about'])
 </body>
 </html>
