@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\TextArea;
 use Ctessier\NovaAdvancedImageField\AdvancedImage;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
+use Spatie\TagsField\Tags;
 
 class Artwork extends Resource
 {
@@ -58,7 +59,7 @@ class Artwork extends Resource
             Boolean::make('Push to Social', 'publish_social'),
             Boolean::make('Instagram', 'published_instagram'),
             Boolean::make('Twitter', 'published_twitter'),
-            TextArea::make('Social Tags'),
+            Tags::make('Tags'),
             DateTime::make('Publish On')->sortable()
         ];
     }
