@@ -2,12 +2,15 @@
 
 namespace App\Nova;
 
+use App\Tag as TagModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Spatie\Tags\Tag as TagModel;
+use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
 class Tag extends Resource
 {
+    use HasSortableRows;
+
     public static $model = TagModel::class;
 
     public static $title = 'name';
