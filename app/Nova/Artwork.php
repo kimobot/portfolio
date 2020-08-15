@@ -57,8 +57,8 @@ class Artwork extends Resource
             AdvancedImage::make('Thumbnail')->croppable(16/9),
             Text::make('Alt Text')->hideFromIndex(),
             Boolean::make('Push to Social', 'publish_social'),
-            Boolean::make('Instagram', 'published_instagram'),
-            Boolean::make('Twitter', 'published_twitter'),
+            Boolean::make('Instagram', 'published_instagram')->hideWhenCreating()->hideWhenUpdating(),
+            Boolean::make('Twitter', 'published_twitter')->hideWhenCreating()->hideWhenUpdating(),
             Tags::make('Tags'),
             DateTime::make('Publish On')->sortable()
         ];
