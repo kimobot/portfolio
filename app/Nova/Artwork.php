@@ -52,14 +52,14 @@ class Artwork extends Resource
             ID::make(__('ID'), 'id')->sortable(),
             Text::make('Title')->rules('required', 'max:255')->sortable(),
             TextArea::make('Description')->rules('max:255'),
-            Text::make('Media')->rules('required', 'max:255')->hideFromIndex(),
-            Image::make('Image')->rules('required'),
-            AdvancedImage::make('Thumbnail')->croppable(16/9)->rules('required'),
+            Tags::make('Media')->type('media')->rules('required', 'max:255')->hideFromIndex(),
+            Image::make('Image')->creationRules('required'),
+            AdvancedImage::make('Thumbnail')->croppable(16/9)->creationRules('required'),
             Text::make('Alt Text')->rules('required')->hideFromIndex(),
             Boolean::make('Push to Social', 'publish_social'),
             Boolean::make('Instagram', 'published_instagram')->hideWhenCreating()->hideWhenUpdating(),
             Boolean::make('Twitter', 'published_twitter')->hideWhenCreating()->hideWhenUpdating(),
-            Tags::make('Tags'),
+            Tags::make('Tags')->type('tag'),
             DateTime::make('Publish On')->sortable()
         ];
     }
