@@ -17,6 +17,6 @@
 <body>
     @include('partials.nav')
     @include('partials.art')
-    @include('partials.nova-page', ['slug' => 'about'])
+    @include('partials.nova-page', ['data' => $pageAbout])
 </body>
 </html>

@@ -14,6 +14,17 @@ class HomeController extends Controller
                 ->orWhereNull('publish_on');
                 })
                 ->orderBy('order_column')->get();
-        return view('home')->with(['artworks' => $artworks]);
+
+        $pageAbout = null;
+        try {
+            $pageAbout = nova_get_page_by_slug('about');
+        } catch (\Exception $e) {
+            // TODO: Log $e
+        }
+
+        return view('home')->with([
+            'artworks' => $artworks,
+            'pageAbout' => $pageAbout
+        ]);
     }
 }
