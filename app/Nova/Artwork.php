@@ -50,12 +50,12 @@ class Artwork extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Text::make('Title')->sortable(),
-            TextArea::make('Description'),
-            Text::make('Media')->hideFromIndex(),
-            Image::make('Image'),
-            AdvancedImage::make('Thumbnail')->croppable(16/9),
-            Text::make('Alt Text')->hideFromIndex(),
+            Text::make('Title')->rules('required', 'max:255')->sortable(),
+            TextArea::make('Description')->rules('max:255'),
+            Text::make('Media')->rules('required', 'max:255')->hideFromIndex(),
+            Image::make('Image')->rules('required'),
+            AdvancedImage::make('Thumbnail')->croppable(16/9)->rules('required'),
+            Text::make('Alt Text')->rules('required')->hideFromIndex(),
             Boolean::make('Push to Social', 'publish_social'),
             Boolean::make('Instagram', 'published_instagram')->hideWhenCreating()->hideWhenUpdating(),
             Boolean::make('Twitter', 'published_twitter')->hideWhenCreating()->hideWhenUpdating(),

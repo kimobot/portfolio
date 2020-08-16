@@ -23,7 +23,7 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Name')->sortable(),
+            Text::make('Name')->rules('required')->sortable(),
             Boolean::make('Filter', 'is_filter')
         ];
     }
