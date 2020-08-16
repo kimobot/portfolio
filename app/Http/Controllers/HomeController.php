@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Artwork;
+use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -22,8 +23,11 @@ class HomeController extends Controller
             // TODO: Log $e
         }
 
+        $filters = Tag::where('is_filter', 1)->pluck('name');
+
         return view('home')->with([
             'artworks' => $artworks,
+            'filters' => $filters,
             'pageAbout' => $pageAbout
         ]);
     }

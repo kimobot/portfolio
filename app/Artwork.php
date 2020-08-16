@@ -29,4 +29,9 @@ class Artwork extends Model implements Sortable
     protected $casts = [
         'publish_on' => 'datetime',
     ];
+
+    public function getFilterableTags()
+    {
+        return $this->tags()->where('is_filter', 1)->pluck('name');
+    }
 }

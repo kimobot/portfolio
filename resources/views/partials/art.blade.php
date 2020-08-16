@@ -1,7 +1,14 @@
-<div id="art" class="w-full bg-gray-200" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: ''}">
+<div id="art" class="w-full bg-gray-200" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: '', filter: 'all'}">
+    {{-- Tag filters --}}
+    <a href="#" @click.prevent="filter = 'all'" :class="{ 'active' : filter === 'all' }">All</a>
+    @foreach($filters as $filter)
+        <a href="#" @click.prevent="filter = '{{ $filter }}'" :class="{ 'active' : filter === '{{ $filter }}' }">{{ $filter }}</a>
+    @endforeach
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-5 px-4 sm:px-6 lg:px-8 sm:py-8 lg:px-16">
         @foreach($artworks as $artwork)
-        <div @click.prevent="open = true, modalSrc='{{ asset('storage/' . $artwork->image) }}', modalTitle='{{ $artwork->title }}', modalDesc='{{ $artwork->description }}'" class="rounded overflow-hidden shadow-lg h-56">
+        <div @click.prevent="open = true, modalSrc='{{ asset('storage/' . $artwork->image) }}', modalTitle='{{ $artwork->title }}', modalDesc='{{ $artwork->description }}'"
+             x-show="@if @foreach($artwork->getFilterableTags() as $tag) filter === '{{ $tag }}' @endforeach || @endif filter === 'all'"
+             class="rounded overflow-hidden shadow-lg h-56">
             <img class="w-full object-cover h-56" src="{{ asset('storage/' . $artwork->thumbnail) }}" alt="">
             {{-- <div class="px-6 py-4">
                 <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
