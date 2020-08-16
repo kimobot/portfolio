@@ -9,7 +9,11 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home() {
-        $artworks = Artwork::where('publish_on', '<' , Carbon::now())->orderBy('sort_order')->get();
+        $artworks = Artwork::where(function ($query) {
+            $query->where('publish_on', '<', Carbon::now())
+                ->orWhereNull('publish_on');
+                })
+                ->orderBy('order_column')->get();
         return view('home')->with(['artworks' => $artworks]);
     }
 }

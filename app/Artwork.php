@@ -9,15 +9,15 @@ use Spatie\Tags\HasTags;
 
 class Artwork extends Model implements Sortable
 {
-    use SortableTrait;
     use HasTags;
+    use SortableTrait;
 
     protected $attributes = [
         'publish_social' => 1
     ];
 
     public $sortable = [
-        'order_column_name' => 'sort_order',
+        'order_column_name' => 'order_column',
         'sort_when_creating' => true,
     ];
 

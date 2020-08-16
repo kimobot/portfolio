@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateTagsAmendSortOrder extends Migration
+class UpdateTagsAddIsFilter extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,7 @@ class UpdateTagsAmendSortOrder extends Migration
     public function up()
     {
         Schema::table('tags', function (Blueprint $table) {
-            $table->dropColumn('order_column');
-            $table->dropColumn('sort_order');
-        });
-        Schema::table('tags', function (Blueprint $table) {
-            $table->integer('sort_order')->after('type');
+            $table->boolean('is_filter')->default(0)->after('slug');
         });
     }
 
@@ -30,11 +26,7 @@ class UpdateTagsAmendSortOrder extends Migration
     public function down()
     {
         Schema::table('tags', function (Blueprint $table) {
-            $table->integer('order_column')->nullable();
-            $table->dropColumn('sort_order');
-        });
-        Schema::table('tags', function (Blueprint $table) {
-            $table->integer('sort_order')->nullable();
+            $table->dropColumn('is_filter');
         });
     }
 }

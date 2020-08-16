@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateArtworksAddSortOrder extends Migration
+class UpdateArtworksAddOrderColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class UpdateArtworksAddSortOrder extends Migration
     public function up()
     {
         Schema::table('artworks', function (Blueprint $table) {
-            $table->integer('sort_order')->after('alt_text');
+            $table->integer('order_column')->nullable()->after('social_tags');
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateArtworksAddSortOrder extends Migration
     public function down()
     {
         Schema::table('artworks', function (Blueprint $table) {
-            $table->dropColumn('sort_order');
+            $table->dropColumn('order_column');
         });
     }
 }

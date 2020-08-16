@@ -10,7 +10,7 @@ class Tag extends SpatieTag
     use HasTags;
 
     public $sortable = [
-        'order_column_name' => 'sort_order',
+        'order_column_name' => 'order_column',
         'sort_when_creating' => true,
     ];
 }

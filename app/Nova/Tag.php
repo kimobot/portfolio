@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Tag as TagModel;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Text;
 use OptimistDigital\NovaSortable\Traits\HasSortableRows;
 
@@ -23,6 +24,7 @@ class Tag extends Resource
     {
         return [
             Text::make('Name')->sortable(),
+            Boolean::make('Filter', 'is_filter')
         ];
     }
 }
