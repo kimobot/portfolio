@@ -1,15 +1,18 @@
-<div id="art" class="w-full bg-gray-200" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: '', filter: 'all'}">
-    {{-- Tag filters --}}
-    <button class="bg-gray-600 hover:bg-gray-700 text-white text-sm font-bold py-1 px-4 rounded-full">
-        All
-    </button>
-    @foreach($filters as $filter)
-        <button class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-1 px-4 rounded-full"
-                @click.prevent="filter = '{{ $filter }}'" :class="{ 'active' : filter === '{{ $filter }}' }">
-            {{ $filter }}
+<div id="art" class="w-full bg-gray-200 py-10" x-data="{open: false, modalSrc: '', modalTitle: '', modalDesc: '', filter: 'all'}">
+    <div class="container mx-auto text-center">
+        {{-- Tag filters --}}
+        <button class="bg-gray-600 hover:bg-gray-700 text-white text-sm font-bold py-1 px-4 rounded-full"
+            @click.prevent="filter = 'all'" :class="{ 'active' : filter === 'all' }">
+            All
         </button>
-    @endforeach
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-5 px-4 sm:px-6 lg:px-8 sm:py-8 lg:px-16">
+        @foreach($filters as $filter)
+            <button class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-1 px-4 rounded-full"
+                @click.prevent="filter = '{{ $filter }}'" :class="{ 'active' : filter === '{{ $filter }}' }">
+                {{ $filter }}
+            </button>
+        @endforeach
+    </div>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-5 px-4 sm:px-6 lg:px-8 sm:py-6 lg:px-16">
         @foreach($artworks as $artwork)
         <div @click.prevent="open = true, modalSrc='{{ asset('storage/' . $artwork->image) }}', modalTitle='{{ $artwork->title }}', modalDesc='{{ $artwork->description }}'"
              x-show="@if($artwork->getFilterableTags()->count()) @foreach($artwork->getFilterableTags() as $tag) filter === '{{ $tag }}' @if($loop->remaining >= 1 || $loop->last) || @endif @endforeach @endif filter === 'all'"
