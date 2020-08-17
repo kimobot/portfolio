@@ -7,7 +7,7 @@
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-5 px-4 sm:px-6 lg:px-8 sm:py-8 lg:px-16">
         @foreach($artworks as $artwork)
         <div @click.prevent="open = true, modalSrc='{{ asset('storage/' . $artwork->image) }}', modalTitle='{{ $artwork->title }}', modalDesc='{{ $artwork->description }}'"
-             x-show="@if @foreach($artwork->getFilterableTags() as $tag) filter === '{{ $tag }}' @endforeach || @endif filter === 'all'"
+             x-show="@if($artwork->getFilterableTags()->count()) @foreach($artwork->getFilterableTags() as $tag) filter === '{{ $tag }}' @if($loop->remaining >= 1 || $loop->last) || @endif @endforeach @endif filter === 'all'"
              class="rounded overflow-hidden shadow-lg h-56">
             <img class="w-full object-cover h-56" src="{{ asset('storage/' . $artwork->thumbnail) }}" alt="">
             {{-- <div class="px-6 py-4">
