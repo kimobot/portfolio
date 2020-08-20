@@ -2512,16 +2512,16 @@
         },
         {
             "name": "optimistdigital/nova-sortable",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/optimistdigital/nova-sortable.git",
-                "reference": "41f0c9f9a30f88dd3d4693a9f4d23914c022eb5e"
+                "reference": "af8c98c69fb4a933a5d15b2fe4ab4fbd32979776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/41f0c9f9a30f88dd3d4693a9f4d23914c022eb5e",
-                "reference": "41f0c9f9a30f88dd3d4693a9f4d23914c022eb5e",
+                "url": "https://api.github.com/repos/optimistdigital/nova-sortable/zipball/af8c98c69fb4a933a5d15b2fe4ab4fbd32979776",
+                "reference": "af8c98c69fb4a933a5d15b2fe4ab4fbd32979776",
                 "shasum": ""
             },
             "require": {
@@ -2553,7 +2553,7 @@
                 "nova",
                 "optimistdigital"
             ],
-            "time": "2020-04-28T11:40:01+00:00"
+            "time": "2020-08-10T15:06:17+00:00"
         },
         {
             "name": "paragonie/random_compat",
