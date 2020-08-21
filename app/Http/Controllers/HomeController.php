@@ -23,7 +23,7 @@ class HomeController extends Controller
             // TODO: Log $e
         }
 
-        $filters = Tag::where('is_filter', 1)->pluck('name');
+        $filters = Tag::where('is_filter', 1)->has('artworks')->pluck('name');
 
         return view('home')->with([
             'artworks' => $artworks,
